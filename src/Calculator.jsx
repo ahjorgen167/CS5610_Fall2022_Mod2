@@ -4,6 +4,8 @@ import Result from './Result';
 
 import './Calculator.css';
 import CalculatorButton from './CalculatorButton';
+import CalcultorButtonMultiplyByFive from './CalcultorButtonMultiplyByFive';
+
 import { useEffect } from 'react';
 import { useReducer } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -25,6 +27,15 @@ function Calculator() {
 
     const [calcValueA, setCalcValueA] = useState(0);
     const [calcValueB, setCalcValueB] = useState(0);
+
+    const [calculatorValues, setCalculatorValues] = useState({
+        valueA: 0,
+        valueB: 0,
+        result: 0,
+        squareAIsBlack: true,
+        square1IsBlack: true,
+        counterAmount: 0,
+    })
     // const [totalSum, setTotalSum] = useState(0);
 
     // action === {value: num}
@@ -65,15 +76,30 @@ function Calculator() {
     }
 
     function onClickPlus() {
-        setTotalSumReducerDispatch({value: "banana"});
+        setTotalSumReducerDispatch({value: calcValueA + calcValueB});
     }
 
     function onClickMinus() {
         setTotalSumReducerDispatch({value: calcValueA - calcValueB});
     }
 
+    function onClickMultiply() {
+        setTotalSumReducerDispatch({value: calcValueA * calcValueB})
+    }
+
+    function onClickMultiplyByInput() {
+
+    }
+
     // onInput = {(e) => inputA(event)}
+
+    //Calcultor (most parent)
+    //   - FancyBorder
+    //       -- Result
+    //   - CalculatorButton
     return (<div>
+
+        <div id="HuntersDiv">Hunter Says Hi</div>
         {/* <NavLink
             to="result5"
           >
@@ -92,6 +118,8 @@ function Calculator() {
         <div>
             <CalculatorButton text={"+"} onClickFunc={onClickPlus} />
             <CalculatorButton text={"-"} onClickFunc={onClickMinus} />
+            <CalculatorButton text={"*"} onClickFunc={onClickMultiply} />
+            <CalcultorButtonMultiplyByFive attributeToUpdate={"square1IsBlack"} favoriteNumber={7} calculatorValues={calculatorValues} setCalculatorValues={setCalculatorValues} valueA={calcValueA} valueB={calcValueB} setValueFunc={setTotalSumReducerDispatch} />
         </div>
 
         <div>
