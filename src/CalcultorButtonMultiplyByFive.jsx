@@ -1,10 +1,14 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
+import ChildOfCBAN5 from './ChildOfCBANB5';
 
 export default function CalculatorButtonAndMultiplyByFive(props) {
 
     //attributeToUpdate = "square1IsBlack"
     //props.favoriteNumber = 7
+
+
 
     const { valueA, valueB, setValueFunc, attributeToUpdate, calculatorValues, setCalculatorValues } = props;
     // const valueA = props.valueA;
@@ -46,6 +50,7 @@ export default function CalculatorButtonAndMultiplyByFive(props) {
     
     return (<button onClick={onClickFunc} className={backgroundColorClass}>
         "Multiply All Values Together and then By Five"
+        <ChildOfCBAN5 totalSum={valueA} />
         </button>)
 
 }

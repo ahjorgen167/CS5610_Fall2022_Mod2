@@ -36,6 +36,10 @@ function Calculator() {
         square1IsBlack: true,
         counterAmount: 0,
     })
+
+    useEffect(() => {
+        //set Global Value to Default
+    }, [])
     // const [totalSum, setTotalSum] = useState(0);
 
     // action === {value: num}
@@ -93,18 +97,20 @@ function Calculator() {
 
     // onInput = {(e) => inputA(event)}
 
-    //Calcultor (most parent)
+    //Calculator (most parent)
     //   - FancyBorder
     //       -- Result
     //   - CalculatorButton
+    //   - CalculatorButtonAndMultiplyBy5
+    //       -- ChildOfCBAN5
     return (<div>
 
         <div id="HuntersDiv">Hunter Says Hi</div>
-        {/* <NavLink
+        <NavLink
             to="result5"
           >
             See Result 5
-          </NavLink> */}
+          </NavLink>
         {/* {calcValueA} + {calcValueB} = /> */}
         <div className="CalcInputRow">
             <div>Input A:</div>
