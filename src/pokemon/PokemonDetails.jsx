@@ -32,11 +32,6 @@ export default function PokemonDetails() {
         return (<div>Loading....</div>)
     }
 
-    if (props.hard === true) {
-
-        return ()
-    }
-
     if(isError) {
 
         return (<div>Could not find pokemon with ID {params.pokemonId}</div>)

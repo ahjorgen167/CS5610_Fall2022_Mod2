@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Calculator from './Calculator';
+// import Calculator from './Calculator';
 import AllPokemon from './pokemon/AllPokemon';
 import PokemonDetails from './pokemon/PokemonDetails';
 import './index.css';
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider, 
   Route,
 } from "react-router-dom";
 import Result from './Result';
 import { CalculatorProvider } from './CalculatorProvider';
+import Register from './Register';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // <img src="" />
@@ -18,6 +19,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const reactRouter = createBrowserRouter([
   {
     path: "/",
+    element: <Register />
+  },
+  {
+    path: "/all",
     element: <AllPokemon />
   },
   // 'localhost:3000' + /123213

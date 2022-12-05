@@ -14,11 +14,11 @@ export default function AllPokemon() {
     });
 
     function getAllPokemonData() {
+        // let getPokemonData = null;
         Axios.get('http://localhost:8000/api/pokemon')
         .then(function(response) {
             setPokemons(response.data);
         })
-
     }
 
     useEffect(function() {
@@ -68,7 +68,7 @@ export default function AllPokemon() {
     for(let i = 0; i < pokemons.length; i++){
         const pokemon = pokemons[i];
         const pokemon_component = (<li>
-            <NavLink to={'/' + pokemon.id} >{pokemon.name}</NavLink>
+            <NavLink to={'/' + pokemon._id} >{pokemon.name}</NavLink>
             </li>)
         pokemon_components.push(pokemon_component);
     }
